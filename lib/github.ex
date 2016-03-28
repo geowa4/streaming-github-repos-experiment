@@ -19,7 +19,7 @@ defmodule GitHub do
   defp process_link_header(link_header) do
     link_header
     |> String.split(~r/,\s/)
-    |> Enum.map(fn(link) ->
+    |> Enum.map(fn link ->
          [_, name] = Regex.run(~r/rel="([a-z]+)"/, link)
          [_, url] = Regex.run(~r/<([^>]+)>/, link)
          {name, url}

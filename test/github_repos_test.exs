@@ -6,7 +6,7 @@ defmodule GitHubRepoTest do
   test "stream repos" do
     # mock get_repos!
   endpoint = "https://api.github.com"
-    get = fn(path) ->
+    get = fn path ->
       if path === ~s(#{endpoint}/orgs/foo/repos/per_page=1&page=2) do
         {
           ~s([{"id":124,"name":"foo","full_name":"foo/bar","html_url":"/baz","description":"quux"}]),
